@@ -1,0 +1,87 @@
+<!--Daniel Cortez-Sanchez 6/6/2024-->
+<!--Had issues setting up css file using webpack had to do styling here-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planning Calendar</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .calendar {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .calendar-header {
+      background-color: #ff00d0;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+    .calendar-body {
+      background-color: #f8f9fa;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+    }
+    .day {
+      border: 1px solid #dee2e6;
+      padding: 10px;
+      height: 100px;
+      position: relative;
+    }
+    .day.blocked {
+      background-color: #e9ecef;
+      pointer-events: none;
+    }
+    .event {
+      background-color: #3b65ef;
+      color: #000;
+      padding: 5px;
+      border-radius: 3px;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+    }
+    .search-bar {
+      margin: 20px 0;
+    }
+
+    .instuctions-text{
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  
+<div class="container">
+  <div class="calendar">
+    <div class="calendar-header">
+      <h2 id="calendar-header-text">Click on month or day to edit</h2>
+    </div>
+    <div class="calendar-body" id="calendar-body">
+      <!-- Calendar Days go here-->
+    </div>
+
+    
+    <div class="calendar-footer">
+      <button id="clearEventsButton" class="btn btn-danger mt-3">Clear All Events</button>
+
+      <div class="search-bar">
+        <input type="text" class="form-control" placeholder="Enter Zipcode for Forecast">
+        <button type="button" class="btn btn-primary">Enter</button>
+      </div>
+      <h3>Weather Forecast for <span id="city-name">Eugene</span></h3>
+      <p id="day1">placeholder</p>
+      <p id="day2">placeholder</p>
+      <p id="day3">placeholder</p>
+    </div>
+  </div>
+</div>
+<script src="calendar.js"></script>
+<script src="weather.js"></script>
+</body>
+</html>
